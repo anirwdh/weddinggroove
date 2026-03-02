@@ -25,27 +25,17 @@ export default function Services() {
       const itemWidth = 350 + 32;
       const targetScroll = Math.max(0, container.scrollLeft - itemWidth);
       
-      // Use requestAnimationFrame for smoother scroll
-      const startTime = performance.now();
-      const startScroll = container.scrollLeft;
-      const distance = targetScroll - startScroll;
-      const duration = 250;
+      // Optimized direct scroll with CSS transition
+      container.style.scrollBehavior = 'auto';
+      container.style.transition = 'scroll-left 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      container.scrollLeft = targetScroll;
       
-      const animateScroll = (currentTime) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-        container.scrollLeft = startScroll + (distance * easeProgress);
-        
-        if (progress < 1) {
-          requestAnimationFrame(animateScroll);
-        } else {
-          checkScrollButtons();
-          setIsScrolling(false);
-        }
-      };
-      
-      requestAnimationFrame(animateScroll);
+      setTimeout(() => {
+        container.style.transition = '';
+        container.style.scrollBehavior = 'smooth';
+        checkScrollButtons();
+        setIsScrolling(false);
+      }, 150);
     }
   };
 
@@ -58,27 +48,17 @@ export default function Services() {
       const maxScroll = container.scrollWidth - container.clientWidth;
       const targetScroll = Math.min(maxScroll, container.scrollLeft + itemWidth);
       
-      // Use requestAnimationFrame for smoother scroll
-      const startTime = performance.now();
-      const startScroll = container.scrollLeft;
-      const distance = targetScroll - startScroll;
-      const duration = 250;
+      // Optimized direct scroll with CSS transition
+      container.style.scrollBehavior = 'auto';
+      container.style.transition = 'scroll-left 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      container.scrollLeft = targetScroll;
       
-      const animateScroll = (currentTime) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-        container.scrollLeft = startScroll + (distance * easeProgress);
-        
-        if (progress < 1) {
-          requestAnimationFrame(animateScroll);
-        } else {
-          checkScrollButtons();
-          setIsScrolling(false);
-        }
-      };
-      
-      requestAnimationFrame(animateScroll);
+      setTimeout(() => {
+        container.style.transition = '';
+        container.style.scrollBehavior = 'smooth';
+        checkScrollButtons();
+        setIsScrolling(false);
+      }, 150);
     }
   };
 

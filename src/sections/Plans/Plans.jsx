@@ -18,55 +18,36 @@ export default function Plans() {
     const planCards = section.querySelectorAll(`.${styles.planCard}`);
     if (!planCards.length) return;
     
-    // Page-like transition effect
-    const st = ScrollTrigger.create({
-      trigger: section,
-      start: "top bottom",
-      end: "bottom top",
-      pin: false,
-      pinSpacing: false,
-      anticipatePin: 1,
-      scrub: false,
-      onEnter: () => {
-        // Page transition in effect
-        gsap.fromTo(section,
-          { 
-            opacity: 0,
-            y: 50,
-            scale: 0.95,
-            force3D: true
-          },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            force3D: true
-          }
-        );
-      }
-    });
-
-    // Optimized timeline for better performance
+    // Single optimized timeline
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: "top 85%",
         end: "top 15%",
         scrub: 0.2,
-        invalidateOnRefresh: true,
-        once: true,
         fastScrollEnd: 150
       }
     });
 
-    tl.fromTo(planCards,
+    tl.fromTo(section,
+      { 
+        opacity: 0,
+        y: 50,
+        scale: 0.95
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: "power2.out"
+      }
+    )
+    .fromTo(planCards,
       { 
         y: 80, 
         opacity: 0,
-        scale: 0.9,
-        force3D: true
+        scale: 0.9
       },
       {
         y: 0,
@@ -74,13 +55,12 @@ export default function Plans() {
         scale: 1,
         duration: 0.6,
         stagger: 0.1,
-        ease: "power2.out",
-        force3D: true
-      }
+        ease: "power2.out"
+      },
+      "-=0.4"
     );
 
     return () => {
-      if (st) st.kill();
       if (tl) tl.kill();
     };
   }, []);
