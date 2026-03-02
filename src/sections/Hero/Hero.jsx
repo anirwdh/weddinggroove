@@ -53,7 +53,7 @@ export default function Hero() {
 
       <div className={styles.overlay}>
         <h1>
-          Luxury Wedding Choreography
+          The Wedding Groove
         </h1>
 
         <p>
