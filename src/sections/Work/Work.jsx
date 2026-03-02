@@ -1,0 +1,204 @@
+import { useRef, useState, useEffect } from "react";
+import SectionTitle from "../../components/ui/SectionTitle"
+import styles from "./Work.module.css"
+
+export default function Work() {
+  const sectionRef = useRef(null);
+  const scrollContainerRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  const checkScrollButtons = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      setCanScrollLeft(container.scrollLeft > 5);
+      setCanScrollRight(container.scrollLeft < container.scrollWidth - container.clientWidth - 5);
+    }
+  };
+
+  const scrollLeft = () => {
+    if (isScrolling) return;
+    const container = scrollContainerRef.current;
+    if (container) {
+      setIsScrolling(true);
+      const itemWidth = 350 + 32;
+      const targetScroll = Math.max(0, container.scrollLeft - itemWidth);
+      
+      // Use requestAnimationFrame for smoother scroll
+      const startTime = performance.now();
+      const startScroll = container.scrollLeft;
+      const distance = targetScroll - startScroll;
+      const duration = 250;
+      
+      const animateScroll = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        container.scrollLeft = startScroll + (distance * easeProgress);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          checkScrollButtons();
+          setIsScrolling(false);
+        }
+      };
+      
+      requestAnimationFrame(animateScroll);
+    }
+  };
+
+  const scrollRight = () => {
+    if (isScrolling) return;
+    const container = scrollContainerRef.current;
+    if (container) {
+      setIsScrolling(true);
+      const itemWidth = 350 + 32;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      const targetScroll = Math.min(maxScroll, container.scrollLeft + itemWidth);
+      
+      // Use requestAnimationFrame for smoother scroll
+      const startTime = performance.now();
+      const startScroll = container.scrollLeft;
+      const distance = targetScroll - startScroll;
+      const duration = 250;
+      
+      const animateScroll = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        container.scrollLeft = startScroll + (distance * easeProgress);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          checkScrollButtons();
+          setIsScrolling(false);
+        }
+      };
+      
+      requestAnimationFrame(animateScroll);
+    }
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      checkScrollButtons();
+      container.addEventListener('scroll', checkScrollButtons, { passive: true });
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener('scroll', checkScrollButtons);
+      }
+    };
+  }, []);
+
+  const workItems = [
+    {
+      id: 1,
+      title: "Luxury Destination Wedding",
+      category: "Sangeet Choreography",
+      video: "/assets/videos/v1.mp4"
+    },
+    {
+      id: 2,
+      title: "Royal Palace Wedding",
+      category: "Couple First Dance",
+      video: "/assets/videos/V2.mp4"
+    },
+    {
+      id: 3,
+      title: "Beach Wedding Ceremony",
+      category: "Bridal Entry",
+      video: "/assets/videos/v3.mp4"
+    },
+    {
+      id: 4,
+      title: "Traditional Indian Wedding",
+      category: "Family Performances",
+      video: "/assets/videos/V4.mp4"
+    },
+    {
+      id: 5,
+      title: "Grand Palace Celebration",
+      category: "Sangeet Night",
+      video: "/assets/videos/V5.mp4"
+    }
+  ]
+
+  return (
+    <section id="work" ref={sectionRef} className={styles.work}>
+      <div className={styles.videoBackground}>
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          preload="metadata"
+          className={styles.backgroundVideo}
+        >
+          <source src="/assets/videos/vv.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className={styles.overlay}>
+        <div className={styles.contentWrapper}>
+          <SectionTitle 
+            title="Our Work" 
+            subtitle="Showcasing unforgettable wedding choreography moments across India"
+            centered={true}
+          />
+          
+          <div className={styles.scrollWrapper}>
+            <button 
+              className={`${styles.scrollButton} ${styles.scrollLeft} ${!canScrollLeft ? styles.disabled : ''}`}
+              onClick={scrollLeft}
+              disabled={!canScrollLeft}
+              aria-label="Scroll left"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            
+            <div className={styles.scrollContainer} ref={scrollContainerRef} onScroll={checkScrollButtons}>
+              <div className={styles.horizontalScroll}>
+                {workItems.map((item) => (
+                  <div key={item.id} className={styles.workItem}>
+                    <div className={styles.videoContainer}>
+                      <video 
+                        autoPlay
+                        muted 
+                        loop 
+                        playsInline
+                        preload="metadata"
+                        className={styles.video}
+                      >
+                        <source src={item.video} type="video/mp4" />
+                      </video>
+                    </div>
+                    <div className={styles.content}>
+                      <p>{item.category}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <button 
+              className={`${styles.scrollButton} ${styles.scrollRight} ${!canScrollRight ? styles.disabled : ''}`}
+              onClick={scrollRight}
+              disabled={!canScrollRight}
+              aria-label="Scroll right"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

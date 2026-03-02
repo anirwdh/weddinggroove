@@ -1,0 +1,86 @@
+.button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.primary {
+  background: linear-gradient(to right, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%);
+  color: #0a0a0a;
+}
+
+.primary:hover {
+  background: linear-gradient(to right, #b8941f 27%, #ffd700 40%, #2a1f0a 99%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+}
+
+.secondary {
+  background: transparent;
+  color: #d4af37;
+  border: 2px solid;
+  border-image: linear-gradient(to right, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%) 1;
+}
+
+.secondary:hover {
+  background: linear-gradient(to right, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%);
+  color: #0a0a0a;
+  transform: translateY(-2px);
+  border-image: none;
+  border-color: transparent;
+}
+
+.outline {
+  background: transparent;
+  color: white;
+  border: 2px solid;
+  border-image: linear-gradient(to right, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%) 1;
+}
+
+.outline:hover {
+  background: linear-gradient(to right, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%);
+  color: #0a0a0a;
+  transform: translateY(-2px);
+  border-image: none;
+  border-color: transparent;
+}
+
+.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.medium {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.large {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .button {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .small {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .large {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}

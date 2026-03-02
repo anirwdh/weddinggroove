@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://theweddinggroove.com/sitemap.xml
+
+# Block common non-content paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /src/
+
+# Allow search engines to crawl main content
+Allow: /assets/
+Allow: /public/
+
+# Crawl delay (optional, be nice to servers)
+Crawl-delay: 1

@@ -1,0 +1,252 @@
+.work {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  contain: layout style paint;
+  z-index: 2;
+  will-change: transform, opacity;
+}
+
+.videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: translateZ(0);
+}
+
+.backgroundVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.videoBackground::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7));
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+.scrollWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.scrollContainer {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin: 0 3rem;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 50%, #d4af37 100%);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 8px 32px rgba(212, 175, 55, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 0 1px rgba(212, 175, 55, 0.1);
+}
+
+.scrollButton:hover:not(.disabled) {
+  background: linear-gradient(135deg, #ffd700 0%, #ffecb3 50%, #ffd700 100%);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 
+    0 12px 40px rgba(212, 175, 55, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 0 0 1px rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.5);
+}
+
+.scrollButton:active:not(.disabled) {
+  transform: translateY(-50%) scale(1.05);
+  transition: transform 0.1s ease;
+}
+
+.scrollButton.disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+  background: linear-gradient(135deg, #666 0%, #888 50%, #666 100%);
+  border-color: rgba(102, 102, 102, 0.3);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.scrollButton svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.scrollButton:hover:not(.disabled) svg {
+  transform: scale(1.1);
+}
+
+.scrollLeft {
+  left: -28px;
+}
+
+.scrollRight {
+  right: -28px;
+}
+
+.horizontalScroll {
+  display: flex;
+  gap: 2rem;
+  padding: 0 1rem;
+  min-width: min-content;
+}
+
+.workItem {
+  background: transparent;
+  border-radius: 1px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid;
+  border-image: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%) 1;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  contain: layout style paint;
+  flex: 0 0 350px;
+  min-width: 350px;
+  transform: translateZ(0);
+}
+
+.workItem:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+  border-image: linear-gradient(to bottom, #ffd700 27%, #ffecb3 40%, #cfc09f 99%) 1;
+}
+
+.videoContainer {
+  position: relative;
+  padding-bottom: 99%;
+  height: 0;
+  overflow: hidden;
+  background: #1a1a1a;
+  border-radius: 0px;
+}
+
+.videoContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #1a1a1a 25%, transparent 25%, transparent 50%, #1a1a1a 50%, #1a1a1a 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+  animation: loading 1s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.videoContainer:hover::before {
+  opacity: 0;
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.content h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.content p {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .work {
+    height: 100vh;
+  }
+  
+  .horizontalScroll {
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .workItem {
+    flex: 0 0 300px;
+    min-width: 300px;
+  }
+}
+
+@keyframes loading {
+  0% { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}

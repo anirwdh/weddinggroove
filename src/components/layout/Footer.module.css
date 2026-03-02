@@ -1,0 +1,205 @@
+.footer {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: white;
+  padding: 0;
+  margin-top: 0;
+  border-top: 1px solid;
+  border-image: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%) 1;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));
+}
+
+.brandInfo h3 {
+  color: white;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.brandInfo p {
+  color: #ccc;
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navLink {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
+  border-left: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #d4af37;
+  border-left-color: #d4af37;
+  padding-left: 1rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contactItem:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #d4af37;
+  transform: translateY(-2px);
+}
+
+.icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: #d4af37;
+  transition: all 0.3s ease;
+}
+
+.contactItem:hover .icon svg {
+  stroke: #cfc09f;
+}
+
+.contactLink {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #d4af37;
+}
+
+.bottom {
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 2rem 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.bottom p {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  color: #666;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialLink:hover {
+  color: #d4af37;
+  border-color: #d4af37;
+  transform: translateY(-2px);
+}
+
+.socialLink svg {
+  width: 20px;
+  height: 20px;
+  stroke: #666;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover svg {
+  stroke: #d4af37;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .navigation {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+  
+  .contactInfo {
+    order: 1;
+  }
+}

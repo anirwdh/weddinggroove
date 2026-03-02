@@ -1,0 +1,51 @@
+/* Global Scroll Optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+
+/* GPU Acceleration for animated elements */
+section {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Reduce paint on scroll */
+.will-change-scroll {
+  will-change: transform;
+  contain: layout style paint;
+}
+
+/* Smooth transitions */
+.smooth-transition {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent layout shifts */
+.layout-stable {
+  contain: layout;
+}
+
+/* Optimize images and videos */
+img, video {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Reduce repaints */
+.reduce-repaint {
+  contain: paint;
+}

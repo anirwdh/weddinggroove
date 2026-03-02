@@ -1,0 +1,22 @@
+{
+  "name": "The Wedding Groove - Luxury Wedding Choreography",
+  "short_name": "Wedding Groove",
+  "description": "Premium wedding choreography services for sangeet, couple dance, bridal entry, and destination weddings across Delhi NCR and Pan India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d4af37",
+  "orientation": "portrait-primary",
+  "categories": ["lifestyle", "entertainment", "business"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

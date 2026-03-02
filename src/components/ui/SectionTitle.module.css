@@ -1,0 +1,38 @@
+.sectionTitle {
+  margin-bottom: 3rem;
+}
+
+.sectionTitle h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  position: relative;
+  background-image: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.sectionTitle p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.centered h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.centered p {
+  margin: 0 auto;
+}
