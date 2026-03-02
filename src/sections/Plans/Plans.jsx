@@ -69,7 +69,7 @@ export default function Plans() {
     {
       id: 1,
       name: "Essential",
-      price: "₹1,50,000",
+
       duration: "Basic Package",
       features: [
         "5 Choreography Sessions",
@@ -83,7 +83,7 @@ export default function Plans() {
     {
       id: 2,
       name: "Premium",
-      price: "₹3,00,000",
+    
       duration: "Most Popular",
       features: [
         "10 Choreography Sessions",
@@ -99,7 +99,7 @@ export default function Plans() {
     {
       id: 3,
       name: "Luxury",
-      price: "₹5,00,000",
+    
       duration: "Complete Package",
       features: [
         "Unlimited Choreography Sessions",
@@ -146,10 +146,10 @@ export default function Plans() {
                 
                 <div className={styles.header}>
                   <h3>{plan.name}</h3>
-                  <div className={styles.price}>
+                  {/* <div className={styles.price}>
                     <span className={styles.amount}>{plan.price}</span>
                     <span className={styles.duration}>{plan.duration}</span>
-                  </div>
+                  </div> */}
                 </div>
                 
                 <div className={styles.features}>
