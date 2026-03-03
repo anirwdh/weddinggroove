@@ -1,78 +1,17 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import SectionTitle from "../../components/ui/SectionTitle"
 import styles from "./Services.module.css"
 
 export default function Services() {
   const sectionRef = useRef(null);
   const scrollContainerRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-  const [isScrolling, setIsScrolling] = useState(false);
-
-  const checkScrollButtons = () => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      setCanScrollLeft(container.scrollLeft > 5);
-      setCanScrollRight(container.scrollLeft < container.scrollWidth - container.clientWidth - 5);
-    }
-  };
-
-  const scrollLeft = () => {
-    if (isScrolling) return;
-    const container = scrollContainerRef.current;
-    if (container) {
-      setIsScrolling(true);
-      const itemWidth = 350 + 32;
-      const targetScroll = Math.max(0, container.scrollLeft - itemWidth);
-      
-      // Optimized direct scroll with CSS transition
-      container.style.scrollBehavior = 'auto';
-      container.style.transition = 'scroll-left 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-      container.scrollLeft = targetScroll;
-      
-      setTimeout(() => {
-        container.style.transition = '';
-        container.style.scrollBehavior = 'smooth';
-        checkScrollButtons();
-        setIsScrolling(false);
-      }, 150);
-    }
-  };
-
-  const scrollRight = () => {
-    if (isScrolling) return;
-    const container = scrollContainerRef.current;
-    if (container) {
-      setIsScrolling(true);
-      const itemWidth = 350 + 32;
-      const maxScroll = container.scrollWidth - container.clientWidth;
-      const targetScroll = Math.min(maxScroll, container.scrollLeft + itemWidth);
-      
-      // Optimized direct scroll with CSS transition
-      container.style.scrollBehavior = 'auto';
-      container.style.transition = 'scroll-left 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-      container.scrollLeft = targetScroll;
-      
-      setTimeout(() => {
-        container.style.transition = '';
-        container.style.scrollBehavior = 'smooth';
-        checkScrollButtons();
-        setIsScrolling(false);
-      }, 150);
-    }
-  };
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (container) {
-      checkScrollButtons();
-      container.addEventListener('scroll', checkScrollButtons, { passive: true });
+      // Enable smooth scrolling
+      container.style.scrollBehavior = 'smooth';
     }
-    return () => {
-      if (container) {
-        container.removeEventListener('scroll', checkScrollButtons);
-      }
-    };
   }, []);
 
   const services = [
@@ -136,18 +75,7 @@ export default function Services() {
           />
           
           <div className={styles.scrollWrapper}>
-            <button 
-              className={`${styles.scrollButton} ${styles.scrollLeft} ${!canScrollLeft ? styles.disabled : ''}`}
-              onClick={scrollLeft}
-              disabled={!canScrollLeft}
-              aria-label="Scroll left"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            
-            <div className={styles.scrollContainer} ref={scrollContainerRef} onScroll={checkScrollButtons}>
+            <div className={styles.scrollContainer} ref={scrollContainerRef}>
               <div className={styles.horizontalScroll}>
                 {services.map((service) => (
                   <div key={service.id} className={styles.serviceCard}>
@@ -165,17 +93,6 @@ export default function Services() {
                 ))}
               </div>
             </div>
-            
-            <button 
-              className={`${styles.scrollButton} ${styles.scrollRight} ${!canScrollRight ? styles.disabled : ''}`}
-              onClick={scrollRight}
-              disabled={!canScrollRight}
-              aria-label="Scroll right"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
           </div>
         </div>
       </div>
