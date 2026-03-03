@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize": "npm run build && npm run optimize:images && npm run optimize:videos",
+    "optimize:images": "find public/assets/images -name '*.jpg' -o -name '*.png' -exec cwebp -q 80 {} -o {}.webp \\;",
+    "optimize:videos": "find public/assets/videos -name '*.mp4' -exec ffmpeg -i {} -c:v libx264 -crf 28 -preset medium -c:a aac -b:a 128k -movflags +faststart {}.optimized.mp4 \\;"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",
