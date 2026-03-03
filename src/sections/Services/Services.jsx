@@ -96,15 +96,20 @@ export default function Services() {
     },
     {
       id: 4,
-      title: "Family Performances",
-      category: "Group Dances",
-      image: "/assets/images/family.jpg"
+      title: "Background Dancers",
+      category: "Background Dancers",
+      image: "/assets/images/IMG_8965.jpg"
     },
     {
       id: 5,
       title: "Destination Wedding",
       category: "Exotic Locations",
       image: "/assets/images/destination.jpg"
+    } ,{
+      id: 6,
+      title: "Family Performances",
+      category: "Group Dances",
+      image: "/assets/images/family.jpg"
     }
   ]
 

@@ -111,20 +111,32 @@ export default function Work() {
     {
       id: 3,
       title: "Beach Wedding Ceremony",
-      category: "Bridal Entry",
+      category: "Engagement Ceremony",
       video: "/assets/videos/v3.mp4"
     },
     {
       id: 4,
       title: "Traditional Indian Wedding",
       category: "Family Performances",
-      video: "/assets/videos/V4.mp4"
+      video: "/assets/videos/V8.mp4"
     },
     {
       id: 5,
       title: "Grand Palace Celebration",
       category: "Sangeet Night",
-      video: "/assets/videos/V5.mp4"
+      video: "/assets/videos/V6.mp4"
+    },
+    {
+      id: 6,
+      title: "Haldi Entry",
+      category: "Haldi Entry",
+      video: "/assets/videos/v7.mp4"
+    },
+    {
+      id: 7,
+      title: "Haldi Entry",
+      category: "Brdie Groom Entry",
+      video: "/assets/videos/V9.mp4"
     }
   ]
 

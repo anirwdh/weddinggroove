@@ -1,53 +1,78 @@
 .footer {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #050505 0%, #0a0a0a 100%);
   color: white;
   padding: 0;
   margin-top: 0;
-  border-top: 1px solid;
+  border-top: 2px solid;
   border-image: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%) 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 3.5rem 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1.2fr 1.6fr 1.2fr;
   gap: 3rem;
   align-items: start;
+  margin-bottom: 2rem;
 }
 
 .logoSection {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .logo {
   height: 60px;
   width: auto;
-  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
-  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+  transition: all 0.4s ease;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
 }
 
 .logo:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.5));
+  transform: scale(1.08) rotate(2deg);
+  filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
 }
 
 .brandInfo h3 {
   color: white;
   margin: 0;
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   background: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.2);
 }
 
 .brandInfo p {
@@ -55,28 +80,39 @@
   margin: 0.5rem 0 0;
   font-size: 0.9rem;
   line-height: 1.5;
+  font-weight: 300;
+  letter-spacing: 0.3px;
 }
 
 .navigation {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding: 0.5rem 0;
 }
 
 .navLink {
   color: #ccc;
   text-decoration: none;
   font-size: 0.95rem;
-  padding: 0.5rem 0;
-  border-left: 2px solid transparent;
-  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid transparent;
+  transition: all 0.4s ease;
   position: relative;
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(5px);
+  font-weight: 400;
+  letter-spacing: 0.2px;
 }
 
 .navLink:hover {
   color: #d4af37;
   border-left-color: #d4af37;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateX(5px);
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 .contactInfo {
@@ -88,18 +124,20 @@
 .contactItem {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
   padding: 1rem;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
 }
 
 .contactItem:hover {
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(212, 175, 55, 0.15);
   border-color: #d4af37;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
 }
 
 .icon {
@@ -107,43 +145,59 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  background: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%);
+  border-radius: 50%;
+  padding: 0.5rem;
 }
 
 .icon svg {
   width: 20px;
   height: 20px;
-  stroke: #d4af37;
-  transition: all 0.3s ease;
+  stroke: #0a0a0a;
+  transition: all 0.4s ease;
 }
 
 .contactItem:hover .icon svg {
-  stroke: #cfc09f;
+  stroke: #0a0a0a;
+  transform: rotate(15deg);
 }
 
 .contactLink {
   color: #ccc;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  transition: all 0.4s ease;
+  font-weight: 400;
+  letter-spacing: 0.2px;
 }
 
 .contactLink:hover {
   color: #d4af37;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
 }
 
 .bottom {
-  border-top: 1px solid rgba(212, 175, 55, 0.2);
-  padding: 2rem 0 3rem;
+  border-top: 2px solid rgba(212, 175, 55, 0.3);
+  padding: 2rem 0 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 3rem;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px 16px 0 0;
+  padding: 2rem 2rem 2.5rem;
+  margin: 3rem -2rem 0;
 }
 
 .bottom p {
-  color: #666;
-  font-size: 0.85rem;
+  color: #888;
+  font-size: 0.9rem;
   margin: 0;
+  font-weight: 300;
+  letter-spacing: 0.3px;
 }
 
 .socialLinks {
@@ -152,54 +206,90 @@
 }
 
 .socialLink {
-  color: #666;
+  color: #888;
   text-decoration: none;
-  padding: 0.5rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
+  padding: 0.6rem;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(212, 175, 55, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
 }
 
 .socialLink:hover {
   color: #d4af37;
   border-color: #d4af37;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.1);
+  background: rgba(212, 175, 55, 0.1);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
 
 .socialLink svg {
   width: 20px;
   height: 20px;
-  stroke: #666;
-  transition: all 0.3s ease;
+  stroke: #888;
+  transition: all 0.4s ease;
 }
 
 .socialLink:hover svg {
   stroke: #d4af37;
+  transform: rotate(10deg);
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
   }
   
   .content {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .logo {
     height: 50px;
   }
   
+  .logoSection {
+    align-items: center;
+    text-align: center;
+  }
+  
   .navigation {
     order: -1;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+  
+  .navLink {
+    text-align: center;
+    border-left: none;
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+  
+  .navLink:hover {
+    padding-left: 0.5rem;
+    transform: translateY(-2px);
   }
   
   .contactInfo {
     order: 1;
+  }
+  
+  .bottom {
+    margin: 2rem -1rem 0;
+    padding: 1.5rem 1rem 2rem;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .socialLinks {
+    justify-content: center;
   }
 }

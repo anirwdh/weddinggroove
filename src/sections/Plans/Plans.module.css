@@ -45,6 +45,7 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
+  align-items: stretch;
 }
 
 .planCard {
@@ -58,6 +59,9 @@
   will-change: transform;
   backface-visibility: hidden;
   perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .planCard:hover {
@@ -121,6 +125,7 @@
 
 .features {
   margin-bottom: 2rem;
+  flex: 1;
 }
 
 .feature {
@@ -140,6 +145,7 @@
 
 .footer {
   text-align: center;
+  margin-top: auto;
 }
 
 .button {
