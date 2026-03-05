@@ -109,11 +109,6 @@
   transform: translateZ(0);
 }
 
-.serviceCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
-  border-image: linear-gradient(to bottom, #ffd700 27%, #ffecb3 40%, #cfc09f 99%) 1;
-}
 
 .imageContainer {
   position: relative;
@@ -138,9 +133,6 @@
   transition: opacity 0.3s ease;
 }
 
-.imageContainer:hover::before {
-  opacity: 0;
-}
 
 .serviceImage {
   position: absolute;

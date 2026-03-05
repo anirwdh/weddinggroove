@@ -24,7 +24,7 @@ export default function Work() {
     {
       id: 2,
       title: "Royal Palace Wedding",
-      category: "Couple First Dance",
+      category: "Carnival Entry",
       video: "/assets/videos/V2.mp4"
     },
     {
@@ -39,13 +39,7 @@ export default function Work() {
       category: "Theme Wedding Dance",
       video: "/assets/videos/vvv.mov"
     },
-    {
-      id: 5,
-      title: "Traditional Indian Wedding",
-      category: "Family Performances",
-      video: "/assets/videos/V8.mp4"
-    },
-    {
+        {
       id: 6,
       title: "Grand Palace Celebration",
       category: "Sangeet Night",
