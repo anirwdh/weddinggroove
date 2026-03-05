@@ -12,9 +12,9 @@ export default function Contact() {
   const [submitStatus, setSubmitStatus] = useState('');
 
   // EmailJS configuration
-  const SERVICE_ID = "service_id"; // Replace with your EmailJS service ID
-  const TEMPLATE_ID = "template_id"; // Replace with your EmailJS template ID
-  const PUBLIC_KEY = "public_key"; // Replace with your EmailJS public key
+  const SERVICE_ID = "service_6ji3oxf"; // Your EmailJS service ID
+  const TEMPLATE_ID = "template_x32koui"; // Your EmailJS template ID
+  const PUBLIC_KEY = "sZP8n4Q4VRLZ1K5FO"; // Your EmailJS public key
 
   const sendEmail = (e) => {
     e.preventDefault();
