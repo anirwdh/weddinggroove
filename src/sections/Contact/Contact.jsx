@@ -153,12 +153,12 @@ Message: ${formData.get('message') || 'No message provided'}`;
                 <div className={styles.formGroup}>
                   <select name="service" className={styles.formSelect}>
                     <option value="">Select Service </option>
-                    <option value="sangeet">Sangeet Choreography </option>
-                    <option value="couple">Couple First Dance </option>
-                    <option value="bridal">Bridal Entry </option>
+                    <option value="sangeet">Sangeet choreography </option>
+                    <option value="entries">Wedding / Sangeet Entries </option>
+                    <option value="lipdub">Wedding Lip-Dub </option>
+                    <option value="foreign">Foreign artist for Entries </option>
+                    <option value="dancers">Indian Background Dancers </option>
                     <option value="destination">Destination Wedding </option>
-                    <option value="family">Family Performances </option>
-                    <option value="theme">Theme-based Events </option>
                   </select>
                 </div>
                 

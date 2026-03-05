@@ -72,11 +72,12 @@ export default function Plans() {
 
       duration: "Basic Package",
       features: [
-        "5 Choreography Sessions",
-        "Sangeet Performance (1 Song)",
+        "Personalized Song Selection Guidance",
+        "2–3 Hour Choreography Sessions",
         "Basic Music Editing",
-        "Online Training Available",
-        "2 Weeks Duration"
+        "Practice Video Support",
+        "Online & Offline Sessions Available",
+        "Additional Sessions Available at Extra Cost"
       ],
       highlighted: false
     },
@@ -86,13 +87,13 @@ export default function Plans() {
     
       duration: "Most Popular",
       features: [
-        "10 Choreography Sessions",
-        "Sangeet + Couple First Dance",
+        "Curated Song Selection",
+        "2–3 Hour Choreography Sessions",
         "Professional Music Editing",
-        "On-site Training (2 Days)",
-        "Props & Accessories",
-        "1 Month Duration",
-        "Family Performances (2 Songs)"
+        "Basic Hand Props & Accessories",
+        "Practice Video Support",
+        "Online & Offline Sessions Available",
+        "Additional Sessions Available at Extra Cost"
       ],
       highlighted: true
     },
@@ -102,15 +103,13 @@ export default function Plans() {
     
       duration: "Complete Package",
       features: [
-        "Unlimited Choreography Sessions",
-        "Complete Wedding Choreography",
-        "Custom Music Production",
-        "On-site Training (5 Days)",
-        "Premium Props & Costumes",
-        "2 Months Duration",
-        "All Family Performances",
-        "Destination Wedding Support",
-        "Professional Video Recording"
+        "Exclusive Song Selection Consultation",
+        "3 Hour Extended Choreography Sessions",
+        "Customized Music Editing (Music Transitions, Beat Enhancements & Voiceover Integration)",
+        "Premium Props & Accessories",
+        "2 Complimentary Additional Sessions",
+        "Detailed Practice Videos with Step-by-Step Tutorial Support",
+        "Online & Offline Sessions Available"
       ],
       highlighted: false
     }
