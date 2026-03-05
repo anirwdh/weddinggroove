@@ -197,7 +197,7 @@ Message: ${formData.get('message') || 'No message provided'}`;
                       </>
                     ) : (
                       <>
-                        <Send size={16} />
+                        <Send size={0} />
                         Send Message 
                       </>
                     )}
