@@ -33,8 +33,8 @@ export default function Footer() {
                   <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </span>
-              <a href="mailto:hello@theweddinggroove.com" className={styles.contactLink}>
-                hello@theweddinggroove.com
+              <a href="mailto:theweddinggroove0@gmail.com" className={styles.contactLink}>
+                theweddinggroove0@gmail.com
               </a>
             </div>
             <div className={styles.contactItem}>

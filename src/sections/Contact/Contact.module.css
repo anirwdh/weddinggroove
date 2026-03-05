@@ -189,17 +189,63 @@
   padding-right: 2.5rem;
 }
 
-.submitButton {
-  width: 100%;
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
   margin-top: 0.75rem;
+}
+
+.submitButton {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
 }
 
-.buttonIcon {
-  margin-right: 0.5rem;
+.whatsappButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: #25d366;
+  border: 1px solid #25d366;
+}
+
+.whatsappButton:hover {
+  background: #25d366;
+  color: white;
+}
+
+.successMessage {
+  padding: 1rem;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid #22c55e;
+  border-radius: 8px;
+  color: #22c55e;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.errorMessage {
+  padding: 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+  color: #ef4444;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 768px) {
@@ -268,6 +314,11 @@
   .formSelect {
     padding: 0.875rem;
     font-size: 0.95rem;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }
 

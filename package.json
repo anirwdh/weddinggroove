@@ -13,6 +13,7 @@
     "optimize:videos": "find public/assets/videos -name '*.mp4' -exec ffmpeg -i {} -c:v libx264 -crf 28 -preset medium -c:a aac -b:a 128k -movflags +faststart {}.optimized.mp4 \\;"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "framer-motion": "^11.0.0",
     "gsap": "^3.14.2",
     "lucide-react": "^0.576.0",

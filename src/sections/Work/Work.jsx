@@ -35,26 +35,32 @@ export default function Work() {
     },
     {
       id: 4,
+      title: "Theme Wedding Dance",
+      category: "Theme Wedding Dance",
+      video: "/assets/videos/vvv.mov"
+    },
+    {
+      id: 5,
       title: "Traditional Indian Wedding",
       category: "Family Performances",
       video: "/assets/videos/V8.mp4"
     },
     {
-      id: 5,
+      id: 6,
       title: "Grand Palace Celebration",
       category: "Sangeet Night",
       video: "/assets/videos/V6.mp4"
     },
     {
-      id: 6,
+      id: 7,
       title: "Haldi Entry",
       category: "Haldi Entry",
       video: "/assets/videos/v7.mp4"
     },
     {
-      id: 7,
+      id: 8,
       title: "Haldi Entry",
-      category: "Brdie Groom Entry",
+      category: "Bride Groom Entry",
       video: "/assets/videos/V9.mp4"
     }
   ]
