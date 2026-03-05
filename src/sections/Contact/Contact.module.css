@@ -221,12 +221,15 @@
 
 .successMessage {
   padding: 1rem;
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid #22c55e;
-  border-radius: 8px;
-  color: #22c55e;
+  background: linear-gradient(to bottom, rgba(212, 175, 55, 0.15), rgba(255, 236, 179, 0.1));
+  border: 2px solid;
+  border-image: linear-gradient(to bottom, #cfc09f 27%, #ffecb3 40%, #3a2c0f 99%) 1;
+  border-radius: 12px;
+  color: #d4af37;
   margin-bottom: 1rem;
   text-align: center;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
 }
 
 .errorMessage {
