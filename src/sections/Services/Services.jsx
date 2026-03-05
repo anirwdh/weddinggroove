@@ -18,19 +18,19 @@ export default function Services() {
     {
       id: 1,
       title: "Sangeet Choreography",
-      category: "Family Performances",
+      category: "Couple Haldi entry",
       image: "/assets/images/sangeet.jpg"
     },
     {
       id: 2,
       title: "Couple First Dance",
-      category: "Romantic Moments",
+      category: "Carnival Couple Entry",
       image: "/assets/images/couple.jpg"
     },
     {
       id: 3,
       title: "Bridal Entry",
-      category: "Grand Entrance",
+      category: "Bride wedding entry",
       image: "/assets/images/bridal.jpg"
     },
     {
