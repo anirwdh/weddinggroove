@@ -6,6 +6,7 @@ import styles from "./Founder.module.css"
 
 export default function Founder() {
   const sectionRef = useRef(null);
+  const galleryRef = useRef(null);
 
   return (
     <section id="founder" ref={sectionRef} className={styles.founder}>
@@ -63,28 +64,32 @@ export default function Founder() {
             </div>
 
             <div className={styles.image}>
-              <div className={styles.gallery}>
+              <div className={styles.gallery} ref={galleryRef}>
                 <div className={styles.galleryGrid}>
-                  <div className={`${styles.galleryItem} ${styles.item1}`}>
-                    <img
-                      src="/assets/images/founder5.jpeg"
-                      alt="Simran - Founder portrait 1"
-                      className={styles.galleryImage}
-                    />
+                  <div className={styles.leftStack}>
+                    <div className={styles.galleryItem}>
+                      <img
+                        src="/assets/images/founder5.jpeg"
+                        alt="Simran - Founder portrait 1"
+                        className={styles.galleryImage}
+                      />
+                    </div>
+                    <div className={styles.galleryItem}>
+                      <img
+                        src="/assets/images/founder7.jpg"
+                        alt="Simran - Founder portrait 2"
+                        className={styles.galleryImage}
+                      />
+                    </div>
                   </div>
-                  <div className={`${styles.galleryItem} ${styles.item2}`}>
-                    <img
-                      src="/assets/images/founder4.jpg"
-                      alt="Simran - Founder portrait 2"
-                      className={styles.galleryImage}
-                    />
-                  </div>
-                  <div className={`${styles.galleryItem} ${styles.item3}`}>
-                    <img
-                      src="/assets/images/founder7.jpg"
-                      alt="Simran - Founder portrait 3"
-                      className={styles.galleryImage}
-                    />
+                  <div className={styles.rightCard}>
+                    <div className={styles.galleryItem}>
+                      <img
+                        src="/assets/images/founder4.jpg"
+                        alt="Simran - Founder portrait 3"
+                        className={styles.galleryImage}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
