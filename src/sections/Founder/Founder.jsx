@@ -9,11 +9,11 @@ export default function Founder() {
 
   return (
     <section id="founder" ref={sectionRef} className={styles.founder}>
-      <video 
+      <video
         className={styles.videoBackground}
-        autoPlay 
-        muted 
-        loop 
+        autoPlay
+        muted
+        loop
         playsInline
       >
         <source src="/assets/videos/jjjj.mp4" type="video/mp4" />
@@ -23,11 +23,11 @@ export default function Founder() {
         <div className={styles.contentWrapper}>
           <div className={styles.content}>
             <div className={styles.text}>
-              <SectionTitle 
-                title="About the Founder" 
+              <SectionTitle
+                title="About the Founder"
                 subtitle="Elegance, precision, and unforgettable wedding moments"
               />
-              
+
               <div className={styles.bio}>
                 <p>
                   Simran, Founder of The Wedding Groove, brings over 8 years of refined experience in wedding choreography and performance curation.
@@ -39,7 +39,7 @@ export default function Founder() {
                   Her approach blends precision, emotion, and aesthetic excellence — ensuring every couple steps into their celebration with confidence and grace.
                 </p>
               </div>
-              
+
               <div className={styles.achievements}>
                 <div className={styles.stat}>
                   <span className={styles.number}>200+</span>
@@ -54,21 +54,39 @@ export default function Founder() {
                   <span className={styles.label}>Cities</span>
                 </div>
               </div>
-              
+
               <div className={styles.cta}>
                 <Button href="#contact" size="large">
                   Create Your Moment
                 </Button>
               </div>
             </div>
-            
+
             <div className={styles.image}>
-              <div className={styles.imageContainer}>
-                <img 
-                  src="/assets/images/foundr.jpg" 
-                  alt="Simran - Founder of The Wedding Groove, luxury wedding choreography specialist"
-                  className={styles.founderImage}
-                />
+              <div className={styles.gallery}>
+                <div className={styles.galleryGrid}>
+                  <div className={`${styles.galleryItem} ${styles.item1}`}>
+                    <img
+                      src="/assets/images/founder5.jpeg"
+                      alt="Simran - Founder portrait 1"
+                      className={styles.galleryImage}
+                    />
+                  </div>
+                  <div className={`${styles.galleryItem} ${styles.item2}`}>
+                    <img
+                      src="/assets/images/founder4.jpg"
+                      alt="Simran - Founder portrait 2"
+                      className={styles.galleryImage}
+                    />
+                  </div>
+                  <div className={`${styles.galleryItem} ${styles.item3}`}>
+                    <img
+                      src="/assets/images/founder7.jpg"
+                      alt="Simran - Founder portrait 3"
+                      className={styles.galleryImage}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
