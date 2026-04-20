@@ -128,7 +128,7 @@
   align-items: center;
 }
 
-.leftStack {
+.leftCard {
   position: relative;
   width: 280px;
   height: 450px;
@@ -150,27 +150,17 @@
   transition: transform 0.3s ease;
 }
 
-/* Left stack cards */
-.leftStack .galleryItem:nth-child(1) {
+/* Left card */
+.leftCard .galleryItem {
   width: 100%;
-  height: 220px;
+  height: 100%;
   top: 0;
   left: 0;
   z-index: 2;
 }
 
-.leftStack .galleryItem:nth-child(2) {
-  width: 100%;
-  height: 220px;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-}
-
-/* Fix zooming for portrait 1 and 2 */
-.leftStack .galleryImage {
-  width: 100%;
-  height: 210%;
+/* Left card image styling */
+.leftCard .galleryImage {
   object-fit: cover;
   background: #f5f5f5;
   border-radius: 18px;
@@ -218,7 +208,7 @@
     max-width: 100%;
   }
   
-  .leftStack {
+  .leftCard {
     width: 200px;
     height: 350px;
   }
@@ -228,13 +218,9 @@
     height: 350px;
   }
   
-  .leftStack .galleryItem:nth-child(1),
-  .leftStack .galleryItem:nth-child(2) {
-    height: 165px;
-  }
   
-  .leftStack .galleryImage {
-    height: 180%;
+  .leftCard .galleryImage {
+    height: 100%;
   }
 }
 
@@ -250,7 +236,7 @@
     text-align: center;
   }
   
-  .leftStack {
+  .leftCard {
     width: 160px;
     height: 280px;
   }
@@ -260,13 +246,9 @@
     height: 280px;
   }
   
-  .leftStack .galleryItem:nth-child(1),
-  .leftStack .galleryItem:nth-child(2) {
-    height: 130px;
-  }
   
-  .leftStack .galleryImage {
-    height: 160%;
+  .leftCard .galleryImage {
+    height: 100%;
   }
 }
 

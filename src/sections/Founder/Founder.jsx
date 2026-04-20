@@ -66,18 +66,11 @@ export default function Founder() {
             <div className={styles.image}>
               <div className={styles.gallery} ref={galleryRef}>
                 <div className={styles.galleryGrid}>
-                  <div className={styles.leftStack}>
+                  <div className={styles.leftCard}>
                     <div className={styles.galleryItem}>
                       <img
                         src="/assets/images/founder5.jpeg"
                         alt="Simran - Founder portrait 1"
-                        className={styles.galleryImage}
-                      />
-                    </div>
-                    <div className={styles.galleryItem}>
-                      <img
-                        src="/assets/images/founder7.jpg"
-                        alt="Simran - Founder portrait 2"
                         className={styles.galleryImage}
                       />
                     </div>
